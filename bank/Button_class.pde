@@ -1,4 +1,4 @@
-class Button extends Component{
+class Button extends Component {
   boolean checked = false; // Buttons state
   
   void pressed(){
@@ -8,6 +8,7 @@ class Button extends Component{
   }
   
   void display(){
+    
   }
 }
 

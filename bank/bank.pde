@@ -7,15 +7,16 @@ void setup() {
   rectMode(CENTER);
   textAlign(CENTER);
   
-  smooth(8);
+  smooth(8); //Til udseendet 
   pixelDensity(1);
   
-  roboR = createFont("Roboto/Roboto-Regular.ttf", 12);
+  roboR = createFont("Roboto/Roboto-Regular.ttf", 12); //Til skrifttypen
   textFont(roboR);
   
-  allButtons.add(new ButtonToggle(125, 100, 200, 150, "10")); 
-  allButtons.add(new ButtonToggle(350, 100, 200, 150, "100")); 
-  allButtons.add(new ButtonToggle(575, 100, 200, 150, "1000"));
+  allButtons.add(new ButtonToggle(125, 100, 200, 150, "$10")); 
+  allButtons.add(new ButtonToggle(350, 100, 200, 150, "$100")); 
+  allButtons.add(new ButtonToggle(575, 100, 200, 150, "$1000"));
+  allButtons.add(new Button(125, (height - 100), 200, 150, "Transfer"));
 }
 
 void draw() {
@@ -28,6 +29,9 @@ void draw() {
 }
 
 void mousePressed() {
+  for(Component button : allButtons ) {
+    button.pressed();
+  }
 }
 
 void mouseReleased() {

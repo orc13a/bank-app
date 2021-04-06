@@ -23,16 +23,19 @@ void draw() {
   clear();
   background(255);
   
-  for(Component button : allButtons ) {
+  for(Component button : allButtons) {
     button.display();
   }
 }
 
 void mousePressed() {
-  for(Component button : allButtons ) {
+  for(Component button : allButtons) {
     button.pressed();
   }
 }
 
 void mouseReleased() {
+  for(Component button : allButtons) {
+    button.released();
+  }
 }

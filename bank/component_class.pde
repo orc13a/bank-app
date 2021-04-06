@@ -15,4 +15,10 @@ class Component {
       return false;
     }
   }
+  
+  void pressed() {
+  }
+
+  void released() {
+  }
 }

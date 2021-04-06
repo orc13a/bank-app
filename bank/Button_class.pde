@@ -1,20 +1,20 @@
-class Button extends Component {
+class Button extends Component{
   boolean checked = false; // Buttons state
   
-  void pressed() {
+  void pressed(){
   }
   
-  void released() {  
+  void released(){  
   }
   
-  void display() {
+  void display(){
   }
 }
 
-class buttonToggle extends Button {
-  void pressed() {
+class buttonToggle extends Button{
+  void pressed(){
   }
   
-  void released() {  
+  void released(){  
   } 
 }

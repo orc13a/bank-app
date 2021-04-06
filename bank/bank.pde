@@ -1,15 +1,12 @@
-void setup () {
+void setup(){
   size(800, 600);
 }
 
-void draw() {
-  
+void draw(){
 }
 
-void mousePressed() {
-
+void mousePressed(){
 }
 
-void mouseReleased() {
-
+void mouseReleased(){
 }

@@ -1,9 +1,9 @@
-class Account extends Component {
+class Account extends Component{
   float balance = 0;
   
-  void add() {
+  void add(){
   }
   
-  void display() {
+  void display(){
   }
 }

@@ -1,5 +1,10 @@
 PFont roboR;
 
+Button transferButton;
+Account myAcc;
+
+float addValue = 0;
+
 ArrayList<Component> allButtons = new ArrayList<Component>();
 
 void setup() {
@@ -13,10 +18,14 @@ void setup() {
   roboR = createFont("Roboto/Roboto-Regular.ttf", 12); //Til skrifttypen
   textFont(roboR);
   
-  allButtons.add(new ButtonToggle(125, 100, 200, 150, "$10")); 
-  allButtons.add(new ButtonToggle(350, 100, 200, 150, "$100")); 
-  allButtons.add(new ButtonToggle(575, 100, 200, 150, "$1000"));
-  allButtons.add(new Button(125, (height - 100), 200, 150, "Transfer"));
+  transferButton = new Button(125, (height - 100), 200, 150, "Transfer", 0);
+  
+  allButtons.add(new ButtonToggle(125, 100, 200, 150, "$10", 10)); 
+  allButtons.add(new ButtonToggle(350, 100, 200, 150, "$100", 100)); 
+  allButtons.add(new ButtonToggle(575, 100, 200, 150, "$1000", 1000));
+  allButtons.add(transferButton);
+  
+  myAcc = new Account(575, (height - 25), 200, 150);
 }
 
 void draw() {
@@ -26,6 +35,8 @@ void draw() {
   for(Component button : allButtons) {
     button.display();
   }
+  
+  myAcc.display();
 }
 
 void mousePressed() {
@@ -37,5 +48,9 @@ void mousePressed() {
 void mouseReleased() {
   for(Component button : allButtons) {
     button.released();
+  }
+  
+  if (transferButton.toggleCheck() == true) {
+    myAcc.add(addValue);
   }
 }

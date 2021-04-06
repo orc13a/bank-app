@@ -38,7 +38,9 @@ class ButtonToggle extends Button {
   }
   
   void pressed() {
-    isPressed = true;
+    if(toggleCheck() == true){
+      isPressed = true;
+    }
   }
 
   void released() {

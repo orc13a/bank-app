@@ -9,7 +9,7 @@ class Component {
   }
   
   boolean toggleCheck(){
-    if(mouseX >= x && mouseX <= (x + w) && mouseY >= y && mouseY <= (y + h)){
+    if(mouseX >= (x - (w/2)) && mouseX <= (x + (w/2)) && mouseY >= (y - (h/2)) && mouseY <= (y + (h/2))){
         return true;
     } else {
       return false;

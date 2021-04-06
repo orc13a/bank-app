@@ -5,6 +5,6 @@ class Component {
   float h; // Height
   String text;
   
-  void display(){
+  void display() {
   }
 }

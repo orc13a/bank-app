@@ -13,19 +13,18 @@ void setup() {
   roboR = createFont("Roboto/Roboto-Regular.ttf", 12);
   textFont(roboR);
   
-   allButtons.add(new ButtonToggle(125, 100, 200, 150, "10"));  
-   allButtons.add(new ButtonToggle(350, 100, 200, 150, "100"));  
-   allButtons.add(new ButtonToggle(575, 100, 200, 150, "1000"));  
-  
-  
+  allButtons.add(new ButtonToggle(125, 100, 200, 150, "10")); 
+  allButtons.add(new ButtonToggle(350, 100, 200, 150, "100")); 
+  allButtons.add(new ButtonToggle(575, 100, 200, 150, "1000"));
 }
 
 void draw() {
   clear();
   background(255);
-   for(Component button : allButtons ){
-     button.display();
-   }
+  
+  for(Component button : allButtons ) {
+    button.display();
+  }
 }
 
 void mousePressed() {

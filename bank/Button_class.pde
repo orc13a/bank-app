@@ -11,14 +11,15 @@ class Button extends Component {
     text = text_;
     value = value_;
   }
-
+  // Skal være her for at subclassen overider
   void pressed() {
   }
-
+  // Skal være her for at subclassen overider
   void released() {
   }
-
+  
   void display() {
+    // Tjekker om der er trykket ned (knappen er valgt), og putter så stroke på den knap, så man kan visualisere det
     if(isPressed == true){
       stroke(0);
     } else {
@@ -36,24 +37,26 @@ class Button extends Component {
 
 class ButtonToggle extends Button {
   ButtonToggle(float x_, float y_, float w_, float h_, String text_, int value_){
+    //Kører forældreklassens construktør
     super(x_, y_, w_, h_, text_, value_);
   }
   
   void pressed() {
+    //Tjekker om musen er over knappen
     if(toggleCheck() == true){
+      // Hvis den ikke er valgt, skal knappen vælges
       if (isPressed == false) {
         isPressed = true;
         
-        addValue += value;
+        addValue += value; // Tilføjer knappens værdi til den samlede tilføjelsesværdi
       } else {
         isPressed = false;
-        
+         
         addValue -= value;
       }
     }
   }
 
   void released() {
-    //isPressed = false;
   }
 }

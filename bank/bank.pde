@@ -1,11 +1,11 @@
-PFont roboR;
+PFont roboR; //Font
 
-Button transferButton;
-Account myAcc;
+Button transferButton; // Her laver vi knappens variabel
+Account myAcc; // Her laver vi kontoens variabel
 
-float addValue = 0;
+float addValue = 0; // Den samlede værdi man vil tilføje til sin konto
 
-ArrayList<Component> allButtons = new ArrayList<Component>();
+ArrayList<Component> allButtons = new ArrayList<Component>(); //ArrayListe for alle vores knapper
 
 void setup() {
   size(700, 600);
@@ -18,20 +18,20 @@ void setup() {
   roboR = createFont("Roboto/Roboto-Regular.ttf", 12); //Til skrifttypen
   textFont(roboR);
   
-  transferButton = new Button(125, (height - 100), 200, 150, "Transfer", 0);
+  transferButton = new Button(125, (height - 100), 200, 150, "Transfer", 0); //Her laver vi objektet
   
-  allButtons.add(new ButtonToggle(125, 100, 200, 150, "$10", 10)); 
-  allButtons.add(new ButtonToggle(350, 100, 200, 150, "$100", 100)); 
-  allButtons.add(new ButtonToggle(575, 100, 200, 150, "$1000", 1000));
-  allButtons.add(transferButton);
+  allButtons.add(new ButtonToggle(125, 100, 200, 150, "$10", 10));  //Her laver vi objektet & her tilføjer vi knappen til vores arrayliste
+  allButtons.add(new ButtonToggle(350, 100, 200, 150, "$100", 100)); //Her laver vi objektet & her tilføjer vi knappen til vores arrayliste
+  allButtons.add(new ButtonToggle(575, 100, 200, 150, "$1000", 1000)); //Her laver vi objektet & her tilføjer vi knappen til vores arrayliste
+  allButtons.add(transferButton); // Her tilføjer vi knappen til vores arrayliste
   
-  myAcc = new Account(575, (height - 25), 200, 150);
+  myAcc = new Account(575, (height - 25), 200, 150); //Her laver vi objektet
 }
 
 void draw() {
   clear();
   background(255);
-  
+  // Vi looper vores arrayliste igennem og gør det samme for alle knapperne
   for(Component button : allButtons) {
     button.display();
   }
@@ -40,16 +40,18 @@ void draw() {
 }
 
 void mousePressed() {
+  // Vi looper vores arrayliste igennem og gør det samme for alle knapperne
   for(Component button : allButtons) {
     button.pressed();
   }
 }
 
 void mouseReleased() {
+  // Vi looper vores arrayliste igennem og gør det samme for alle knapperne
   for(Component button : allButtons) {
     button.released();
   }
-  
+  // Hvis man har musen over transfer knappen, kan man clicke
   if (transferButton.toggleCheck() == true) {
     myAcc.add(addValue);
   }

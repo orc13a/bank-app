@@ -1,11 +1,13 @@
+bank bankLib = new bank();
+
 PFont roboR; //Font
 
-Button transferButton; // Her laver vi knappens variabel
-Account myAcc; // Her laver vi kontoens variabel
+bank transferButton; // Her laver vi knappens variabel
+bank myAcc; // Her laver vi kontoens variabel
 
 float addValue = 0; // Den samlede værdi man vil tilføje til sin konto
 
-ArrayList<Component> allButtons = new ArrayList<Component>(); //ArrayListe for alle vores knapper
+ArrayList<bank> allButtons = new ArrayList<bank>(); //ArrayListe for alle vores knapper
 
 void setup() {
   size(700, 600);
@@ -18,7 +20,7 @@ void setup() {
   roboR = createFont("Roboto/Roboto-Regular.ttf", 12); //Til skrifttypen
   textFont(roboR);
   
-  transferButton = new Button(125, (height - 100), 200, 150, "Transfer", 0, this); //Her laver vi objektet
+  transferButton = new bankLib.button(125, (height - 100), 200, 150, "Transfer", 0, this); //Her laver vi objektet
   
   allButtons.add(new ButtonToggle(125, 100, 200, 150, "$10", 10, this));  //Her laver vi objektet & her tilføjer vi knappen til vores arrayliste
   allButtons.add(new ButtonToggle(350, 100, 200, 150, "$100", 100, this)); //Her laver vi objektet & her tilføjer vi knappen til vores arrayliste

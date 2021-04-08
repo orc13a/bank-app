@@ -32,9 +32,9 @@ class Button extends Component {
 }
 
 class ButtonToggle extends Button {
-  ButtonToggle(float x_, float y_, float w_, float h_, String text_, int value_){
+  ButtonToggle(float x_, float y_, float w_, float h_, String text_, int value_, PApplet p_){
     //Kører forældreklassens construktør
-    super(x_, y_, w_, h_, text_, value_);
+    super(x_, y_, w_, h_, text_, value_, p_);
   }
   
   void pressed() {

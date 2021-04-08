@@ -1,13 +1,13 @@
-bank bankLib = new bank();
+bank lib = new bank();
 
 PFont roboR; //Font
 
-bank transferButton; // Her laver vi knappens variabel
+// transferButton; // Her laver vi knappens variabel
 bank myAcc; // Her laver vi kontoens variabel
 
 float addValue = 0; // Den samlede værdi man vil tilføje til sin konto
 
-ArrayList<bank> allButtons = new ArrayList<bank>(); //ArrayListe for alle vores knapper
+// ArrayList<bank> allButtons = new ArrayList<bank>(); //ArrayListe for alle vores knapper
 
 void setup() {
   size(700, 600);

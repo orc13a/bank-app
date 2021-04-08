@@ -4,6 +4,16 @@ class Component {
   float w; // Width
   float h; // Height
   String text;
+  PApplet p;
+  
+  Component(float x_, float y_, float w_, float h_, String text_, PApplet p_) {  
+    this.x = x_;
+    this.y = y_;
+    this.w = w_;
+    this.h = h_;
+    this.text = text_;
+    this.p = p_;
+  }
   
   void display() {
   }

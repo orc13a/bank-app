@@ -3,12 +3,8 @@ class Button extends Component {
   color buttonColour = #078fff;
   int value;
   
-  Button(float x_, float y_, float w_, float h_, String text_, int value_) {  
-    x = x_;
-    y = y_;
-    w = w_;
-    h = h_;
-    text = text_;
+  Button(float x_, float y_, float w_, float h_, String text_, int value_, PApplet p_) {  
+    super(x_, y_, w_, h_, text_, p_);
     value = value_;
   }
   // Skal være her for at subclassen overider
@@ -21,17 +17,17 @@ class Button extends Component {
   void display() {
     // Tjekker om der er trykket ned (knappen er valgt), og putter så stroke på den knap, så man kan visualisere det
     if(isPressed == true){
-      stroke(0);
+      p.stroke(0);
     } else {
-      noStroke();
+      p.noStroke();
     }
     
-    fill(buttonColour);
-    rect(x, y, w, h, 10);
+    p.fill(buttonColour);
+    p.rect(x, y, w, h, 10);
     
-    fill(255);
-    textSize(50);
-    text(text, x, y+15);
+    p.fill(255);
+    p.textSize(50);
+    p.text(text, x, y+15);
   }
 }
 

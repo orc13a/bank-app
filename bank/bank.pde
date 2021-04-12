@@ -14,7 +14,7 @@ void setup() {
   
   smooth(8); //Til udseendet 
   pixelDensity(1);
-  
+
   roboR = createFont("Roboto/Roboto-Regular.ttf", 12); //Til skrifttypen
   textFont(roboR);
   
@@ -31,6 +31,7 @@ void setup() {
 void draw() {
   clear();
   background(255);
+  
   // Vi looper vores arrayliste igennem og gør det samme for alle knapperne
   for(Component button : allButtons) {
     button.display();
@@ -51,18 +52,22 @@ void mouseReleased() {
   for(Component button : allButtons) {
     button.released();
   }
+  
   // Hvis man har musen over transfer knappen, kan man clicke
   if (transferButton.toggleCheck() == true) {
+    // Hvis man har skrevet noget andet en bare ingenting
     if(myAcc.userInput.length() != 0) {
       addValue += int(myAcc.userInput);
     }
-    myAcc.add(addValue);
     
+    myAcc.add(addValue); // Tilføjer det valgte beløb til konto'en
+    
+    // Nulstiller alle knapperne hvis nogen er vælget valgt
     for(Component button : allButtons) {
-    button.reset();
+      button.reset();
     }
     
-    addValue = 0;
+    addValue = 0; // Nulstiller tilføjelse værdigen
   }
 }
 

@@ -2,7 +2,6 @@ class Account extends Component {
   float balance = 0;
   String userInput = "0"; 
   
-  
   Account(float x_, float y_, float w_, float h_) {
     x = x_;
     y = y_;
@@ -29,32 +28,31 @@ class Account extends Component {
   }
   
   void inputField() {
-    strokeWeight(4);
-    stroke(#078fff);
     fill(255);
     rect(238, height/2, w * 2 + 25, h, 10);
     
     
     fill(0);
-    text('$' ,75, height/2+15);
+    text('$', 75, height/2+15);
     textAlign(LEFT);
     text(userInput, 100, height/2 + 15);
     textAlign(CENTER);
   }
   
-   void customValue(){
-     if (key == BACKSPACE && key != ENTER && userInput.length() > 0) {
+   void customValue() {
+    if (key == BACKSPACE && key != ENTER && userInput.length() > 0) {
       userInput = userInput.substring(0, userInput.length() - 1);
     } else if (key != BACKSPACE && key != ENTER && userInput.length() < 10) {
       if(userInput.length() == 1 && userInput == "0"){
-      userInput = "";
+        userInput = "";
       }
       
-      if (key == '1' || key == '2' || key == '3' || key == '4' || key == '5' || key == '6' || key == '7' || key == '8' || key == '9' || key == '0') {
+      //if (key == '1' || key == '2' || key == '3' || key == '4' || key == '5' || key == '6' || key == '7' || key == '8' || key == '9' || key == '0') {
+      if (int(key) > 47 && int(key) < 58) { // Bruger ASCII koder, Processing bruger ASCII koder. (0 = 48) og (9 = 57), de andre tal er imellem de to.
         userInput += key; 
       }
     } else if(userInput.length() == 0) {
       userInput = "0";
     }
-   }
+  }
 }

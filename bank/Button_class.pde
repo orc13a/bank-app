@@ -12,6 +12,7 @@ class Button extends Component {
     value = value_;
   }
   
+  // Skal være her for at subclassen overider
   void reset(){
     isPressed = false;
   }
@@ -19,6 +20,7 @@ class Button extends Component {
   // Skal være her for at subclassen overider
   void pressed() {
   }
+  
   // Skal være her for at subclassen overider
   void released() {
   }

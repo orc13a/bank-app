@@ -18,7 +18,7 @@ void setup() {
   roboR = createFont("Roboto/Roboto-Regular.ttf", 12); //Til skrifttypen
   textFont(roboR);
   
-  transferButton = new Button(350, (height - 100), 200, 150, "Transfer", 0); //Her laver vi objektet
+  transferButton = new Button(125, (height - 100), 200, 150, "Transfer", 0); //Her laver vi objektet
   
   allButtons.add(new ButtonToggle(125, 100, 200, 150, "$10", 10));  //Her laver vi objektet & her tilføjer vi knappen til vores arrayliste
   allButtons.add(new ButtonToggle(350, 100, 200, 150, "$100", 100)); //Her laver vi objektet & her tilføjer vi knappen til vores arrayliste

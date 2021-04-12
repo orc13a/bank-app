@@ -13,6 +13,7 @@ class Account extends Component {
     balance += v;
   }
   
+  
   void display() {
     strokeWeight(4);
     stroke(#078fff);
@@ -21,6 +22,18 @@ class Account extends Component {
     
     fill(0);
     text("$" + int(balance), x, (y - (h / 2) + 15));
+    
+    inputField();
+  }
+  
+  void inputField() {
+    strokeWeight(4);
+    stroke(#078fff);
+    fill(255);
+    rect(x-450, (y - (h / 2)), w, h, 10);
+    
+    fill(0);
+    text("$" + int(userInput), x, (y - (h / 2) + 15));
   }
   
    void customValue(){

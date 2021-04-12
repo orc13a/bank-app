@@ -11,6 +11,11 @@ class Button extends Component {
     text = text_;
     value = value_;
   }
+  
+  void reset(){
+    isPressed = false;
+  }
+  
   // Skal være her for at subclassen overider
   void pressed() {
   }

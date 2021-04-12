@@ -22,4 +22,7 @@ class Component {
   // Skal være her for at subclassen overider
   void released() {
   }
+  
+  void reset(){
+  }
 }

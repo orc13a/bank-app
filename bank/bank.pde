@@ -3,8 +3,6 @@ PFont roboR; //Font
 Button transferButton; // Her laver vi knappens variabel
 Account myAcc; // Her laver vi kontoens variabel
 
-float addValue = 0; // Den samlede værdi man vil tilføje til sin konto
-
 ArrayList<Component> allButtons = new ArrayList<Component>(); //ArrayListe for alle vores knapper
 
 void setup() {
@@ -54,9 +52,9 @@ void mouseReleased() {
   // Hvis man har musen over transfer knappen, kan man clicke
   if (transferButton.toggleCheck() == true) {
     if(myAcc.userInput.length() > 1 && myAcc.userInput.length() != 0) {
-      addValue += int(myAcc.userInput);
+      myAcc.addValue += int(myAcc.userInput);
     }
-    myAcc.add(addValue);
+    myAcc.add(myAcc.addValue);
   }
 }
 

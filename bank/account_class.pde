@@ -1,5 +1,6 @@
 class Account extends Component {
   float balance = 0;
+  float addValue = 0; // Den samlede værdi man vil tilføje til sin konto
   String userInput = "0"; 
   
   

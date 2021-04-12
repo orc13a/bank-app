@@ -30,7 +30,7 @@ class Account extends Component {
     strokeWeight(4);
     stroke(#078fff);
     fill(255);
-    rect(225, height/2, w * 2, h, 10);
+    rect(238, height/2, w * 2 + 25, h, 10);
     
     
     fill(0);
@@ -43,7 +43,7 @@ class Account extends Component {
    void customValue(){
      if (key == BACKSPACE && key != ENTER && userInput.length() > 0) {
       userInput = userInput.substring(0, userInput.length() - 1);
-    } else if (key != BACKSPACE && key != ENTER) {
+    } else if (key != BACKSPACE && key != ENTER && userInput.length() < 10) {
       if (key == '1' || key == '2' || key == '3' || key == '4' || key == '5' || key == '6' || key == '7' || key == '8' || key == '9' || key == '0') {
         userInput += key; 
       }

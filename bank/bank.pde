@@ -53,6 +53,9 @@ void mouseReleased() {
   }
   // Hvis man har musen over transfer knappen, kan man clicke
   if (transferButton.toggleCheck() == true) {
+    if(myAcc.userInput.length() > 1 && myAcc.userInput.length() != 0) {
+      addValue += int(myAcc.userInput);
+    }
     myAcc.add(addValue);
   }
 }

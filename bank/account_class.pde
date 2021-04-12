@@ -1,6 +1,7 @@
 class Account extends Component {
   float balance = 0;
-  String userInput = ""; 
+  String userInput = "0"; 
+  
   
   Account(float x_, float y_, float w_, float h_) {
     x = x_;
@@ -11,6 +12,7 @@ class Account extends Component {
   
   void add(float v) {
     balance += v;
+    userInput = "0";
   }
   
   
@@ -44,9 +46,16 @@ class Account extends Component {
      if (key == BACKSPACE && key != ENTER && userInput.length() > 0) {
       userInput = userInput.substring(0, userInput.length() - 1);
     } else if (key != BACKSPACE && key != ENTER && userInput.length() < 10) {
+      if(userInput.length() == 1 && userInput == "0"){
+      userInput = "";
+      }
+      
       if (key == '1' || key == '2' || key == '3' || key == '4' || key == '5' || key == '6' || key == '7' || key == '8' || key == '9' || key == '0') {
         userInput += key; 
       }
+    } else if(userInput.length() == 0) {
+      userInput = "0";
     }
+    
    }
 }

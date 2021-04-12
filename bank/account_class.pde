@@ -1,5 +1,6 @@
 class Account extends Component {
   float balance = 0;
+  String userInput = ""; 
   
   Account(float x_, float y_, float w_, float h_) {
     x = x_;
@@ -21,4 +22,12 @@ class Account extends Component {
     fill(0);
     text("$" + int(balance), x, (y - (h / 2) + 15));
   }
+  
+   void customValue(){
+     if (key == BACKSPACE && key != ENTER && userInput.length() > 0) {
+      userInput = userInput.substring(0, userInput.length() - 1);
+    } else if (key != BACKSPACE && key != ENTER) {
+      userInput += key;
+    }
+   }
 }

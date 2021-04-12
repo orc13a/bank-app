@@ -56,3 +56,7 @@ void mouseReleased() {
     myAcc.add(addValue);
   }
 }
+
+void keyPressed(){
+  myAcc.customValue();
+}

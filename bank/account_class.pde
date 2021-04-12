@@ -56,6 +56,5 @@ class Account extends Component {
     } else if(userInput.length() == 0) {
       userInput = "0";
     }
-    
    }
 }

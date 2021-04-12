@@ -1,5 +1,7 @@
 PFont roboR; //Font
 
+float addValue = 0; // Den samlede værdi man vil tilføje til sin konto
+
 Button transferButton; // Her laver vi knappens variabel
 Account myAcc; // Her laver vi kontoens variabel
 
@@ -52,9 +54,9 @@ void mouseReleased() {
   // Hvis man har musen over transfer knappen, kan man clicke
   if (transferButton.toggleCheck() == true) {
     if(myAcc.userInput.length() > 1 && myAcc.userInput.length() != 0) {
-      myAcc.addValue += int(myAcc.userInput);
+      addValue += int(myAcc.userInput);
     }
-    myAcc.add(myAcc.addValue);
+    myAcc.add(addValue);
   }
 }
 

@@ -48,11 +48,11 @@ class ButtonToggle extends Button {
       if (isPressed == false) {
         isPressed = true;
         
-        myAcc.addValue += value; // Tilføjer knappens værdi til den samlede tilføjelsesværdi
+        addValue += value; // Tilføjer knappens værdi til den samlede tilføjelsesværdi
       } else {
         isPressed = false;
          
-        myAcc.addValue -= value;
+        addValue -= value;
       }
     }
   }

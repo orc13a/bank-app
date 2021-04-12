@@ -30,17 +30,19 @@ class Account extends Component {
     strokeWeight(4);
     stroke(#078fff);
     fill(255);
-    rect(x-450, (y - (h / 2)), w, h, 10);
+    rect(x - 450, (y - (h / 2)), w, h, 10);
     
     fill(0);
-    text("$" + int(userInput), x, (y - (h / 2) + 15));
+    text("$" + userInput, x - 450, (y - (h / 2) + 15));
   }
   
    void customValue(){
      if (key == BACKSPACE && key != ENTER && userInput.length() > 0) {
       userInput = userInput.substring(0, userInput.length() - 1);
     } else if (key != BACKSPACE && key != ENTER) {
-      userInput += key;
+      if (key == 1 || key == 2 || key == 3 || key == 4 || key == 5 || key == 6 || key == 7 || key == 8 || key == 9 || key == 0) {
+        userInput += key;
+      }
     }
    }
 }
